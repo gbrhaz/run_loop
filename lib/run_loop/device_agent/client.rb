@@ -199,6 +199,8 @@ module RunLoop
             RunLoop::DeviceAgent::Xcodebuild.new(device)
           elsif value == :ios_device_manager
             RunLoop::DeviceAgent::IOSDeviceManager.new(device)
+          elsif value == :ideviceteststarter
+            RunLoop::DeviceAgent::IDeviceTestStarter.new(device)
           else
             raise(ArgumentError,
                   "Expected :cbx_launcher => #{value} to be :xcodebuild or :ios_device_manager")
